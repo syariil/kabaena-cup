@@ -1,10 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\Models\Jadwal;
-use App\Models\Team;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class CompetitionController extends Controller
