@@ -10,9 +10,5 @@ use App\Models\UserMenu;
 
 class Controller extends BaseController
 {
-    public function UserMenu()
-    {
-        $data = UserMenu::all();
-        return view('layout.master', ['data' => $data]);
-    }
+    // 
 }
