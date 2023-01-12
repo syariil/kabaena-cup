@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('Kota')->default('kota');
             $table->bigInteger('Whatsapp');
             $table->string('Logo')->default('logo_default.jpeg');
+            $table->string('bukti_pembayaran');
 
             $table->string('Username');
             $table->bigInteger('Id_game');

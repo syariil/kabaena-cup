@@ -36,7 +36,6 @@ class AdminRegistration extends Controller
     public function update(Request $request, Registration $id)
     {
         $request->validate([
-            'Season' => 'required|numeric',
             'status' => 'required|in:active,nonactive'
         ]);
         $id->fill($request->except('_token', '_method'))->save();

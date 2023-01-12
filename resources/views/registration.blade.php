@@ -70,11 +70,11 @@
                                 class="block w-full text-sm text-gray-900 dark:text-gray-200 bg-gray-50 dark:bg-gray-900 rounded-lg border border-gray-300 dark:border-gray-700 cursor-pointer focus:outline-none"
                                 aria-describedby="user_avatar_help" id="user_avatar" type="file" required>
                         </div>
-                        <div class="mb-6">
-                            <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-200"
+                        <div class="mb-6 hidden">
+                            <label class=" block mb-2 text-sm font-medium text-gray-900 dark:text-gray-200"
                             for="user_avatar">Season</label>
                             <input name="Season" type="number" id="season"
-                                class="bg-gray-50 dark:bg-gray-900 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-200 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-full p-2.5 block"
+                                class=" bg-gray-50 dark:bg-gray-900 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-200 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-full p-2.5"
                                 value="{{ $data[0]->Season }}" readonly>
                         </div>
                     </div>

@@ -50,8 +50,6 @@
 
             </div>
         </div>
-
-
         <!-- standing -->
         <div class="" id='grup'>
 

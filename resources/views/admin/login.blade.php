@@ -13,10 +13,6 @@
 </head>
 
 <body class="bg-white-gardient">
-
-
-
-
     <div class="flex justify-center w-full h-full md:h-auto items-center bg-gray-300 dark:bg-gray-700 ">
         <section class="bg-gray-50 dark:bg-gray-900 rounded-3xl w-full md:w-[50%] h-auto px-8 py-5 md:py-0">
 

@@ -5,7 +5,6 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Models\Champion;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class AdminChampionController extends Controller
@@ -28,7 +27,7 @@ class AdminChampionController extends Controller
         ]);
 
         Champion::create($request->all());
-        return redirect()->route('champion');
+        return redirect()->route('admin.champion')->with('success', 'champions added.');
     }
 
     public function edit(Champion $id)

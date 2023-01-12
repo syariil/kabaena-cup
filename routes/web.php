@@ -7,10 +7,11 @@ use App\Http\Controllers\admin\AdminController;
 use App\Http\Controllers\admin\AdminRegistration;
 use App\Http\Controllers\ChampionController;
 use App\Http\Controllers\CompetitionController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegistrationController;
-use Illuminate\Contracts\Session\Session;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,26 +25,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', [HomeController::class, 'index']);
+Route::get('/post/{post}', [HomeController::class, 'post']);
 
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
-
-// Route::middleware('auth')->group(function () {
-//     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-//     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-//     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-// });
-
-// require __DIR__.'/auth.php';
-
-
-Route::get('/', function () {
-    return view('home');
-});
 Route::get('/About', function () {
     return view('about');
 });
@@ -58,6 +42,8 @@ Route::get('/done', [RegistrationController::class, 'regDone'])->name('registrat
 Route::get('/Champion', [ChampionController::class, 'index'])->name('champion');
 Route::get('/Champion/{id}', [ChampionController::class, 'show']);
 
+Route::get('login', [LoginController::class, 'index'])->name('login');
+Route::post('login', [LoginController::class, 'action'])->name('login.action');
 
 Route::middleware(['auth'])->group(function () {
     // admin
@@ -80,17 +66,16 @@ Route::middleware(['auth'])->group(function () {
     // registration
     Route::get('/admin/Registration', [AdminRegistration::class, 'index'])->name('admin.registration');
     Route::post('admin/Registration', [AdminRegistration::class, 'create'])->name('registration.create');
-
+    // add grup
     Route::get('admin/Registration/grup', [AdminRegistration::class, 'grup']);
     Route::post('admin/Registration/grup', [AdminRegistration::class, 'creategrup'])->name('registration.grupCreate');
+    // edit and delete grup
     Route::get('admin/Registration/grup/{id}/edit', [AdminRegistration::class, 'grupEdit'])->name('registration.grupEdit');
     Route::put('admin/Registration/grup/{id}/edit', [AdminRegistration::class, 'grupUpdate'])->name('registration.grupUpdate');
     Route::delete('admin/Registration/grup/{id}/delete', [AdminRegistration::class, 'grupDelete'])->name('registration.grupDelete');
-
-
-    Route::get('/admin/Rgistration/{id}/edit', [AdminRegistration::class, 'edit'])->name('registration.edit');
+    // edit and delete season
+    Route::get('/admin/Registration/{id}/edit', [AdminRegistration::class, 'edit'])->name('registration.edit');
     Route::put('admin/Registration/{id}/edit', [AdminRegistration::class, 'update'])->name('registration.update');
-
     Route::delete('/admin/Registration/{id}/edit', [AdminRegistration::class, 'delete'])->name('registration.delete');
 
     // champion
@@ -101,9 +86,12 @@ Route::middleware(['auth'])->group(function () {
     Route::delete('/admin/Champion/delete/{id}', [AdminChampionController::class, 'delete'])->name('champion.delete');
 
     // post
-
+    Route::get('admin/post', [PostController::class, 'index']);
+    Route::post('admin/post', [PostController::class, 'post'])->name('post.post');
 
     // profile to change password
+    Route::get('admin/change-password', [ProfileController::class, 'index']);
+    Route::post('admin/change-password', [ProfileController::class, 'changePassword'])->name('change.password');
 
 
     // logout
@@ -111,5 +99,4 @@ Route::middleware(['auth'])->group(function () {
 });
 
 
-Route::get('login', [LoginController::class, 'index'])->name('login');
-Route::post('login', [LoginController::class, 'action'])->name('login.action');
+

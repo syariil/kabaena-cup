@@ -5,9 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Team;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Storage;
-use Psr\Http\Message\RequestFactoryInterface;
-
 
 class RegistrationController extends Controller
 {
@@ -55,15 +52,17 @@ class RegistrationController extends Controller
             'Role6' => 'in:Role,roam,mid,exp,gold,Jungler',
 
         ]);
-        $input = $request->except('bukti_pembayaran');
+        $input = $request->except('_token');
         if ($request->file('Logo')) {
             $logo = $request->get('Team') . '_logo.' . $request->file('Logo')->extension();
             // change name logo jika ada logo
             $request->file('Logo')->move(public_path('image/logo'), $logo);
+            $input['Logo'] = $logo;
         }
 
         $pendaftaran = $request->get('Team') . '_pendaftaran.' . $request->file('bukti_pembayaran')->extension();
-        Storage::putFileAs('public/image/pendaftaran/', $request->file('bukti_pembayaran'), $pendaftaran);
+        $request->file('bukti_pembayaran')->move(public_path('image/pendaftaran/'), $pendaftaran);
+        $input['bukti_pembayaran'] = $pendaftaran;
 
         Team::create($input);
 

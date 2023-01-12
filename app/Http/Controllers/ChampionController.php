@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\Champion;
 use App\Models\Team;
 use Illuminate\Support\Facades\DB;
 

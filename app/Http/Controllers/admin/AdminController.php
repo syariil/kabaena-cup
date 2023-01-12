@@ -5,10 +5,8 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Models\Team;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
-use Illuminate\Support\Facades\Storage;
 
 class AdminController extends Controller
 {
@@ -79,7 +77,7 @@ class AdminController extends Controller
             if ($id->Logo !== 'logo_default.jpeg') {
                 File::delete('image/logo/' . $logo);
             }
-            // change name logo jika ada logo
+            // change logo name if logo input exist
             $request->file('Logo')->move(public_path('image/logo'), $logo);
             $input['Logo'] = $logo;
         }

@@ -61,24 +61,28 @@
                 md:bg-white md:dark:bg-gray-900">
 
                     <li>
-                        <a href="{{ url('/admin') }}"
-                            class="block py-2 pl-3 pr-4  rounded hover:bg-gray-100 dark:hover:bg-gray-700  md:hover:bg-transparent md:border-0 md:hover:text-red-600 md:p-0 md:dark:hover:text-white md:dark:hover:bg-transparent  {{ request()->is('/admin') ? 'text-red-600 dark:text-red-500' : ' text-gray-900 dark:text-gray-200' }}">Home</a>
+                        <a href="{{ url('admin') }}"
+                            class="block py-2 pl-3 pr-4  rounded hover:bg-gray-100 dark:hover:bg-gray-700  md:hover:bg-transparent md:border-0 md:hover:text-red-600 md:p-0 md:dark:hover:text-white md:dark:hover:bg-transparent  {{ request()->is('admin') ? 'text-red-600 dark:text-red-500' : ' text-gray-900 dark:text-gray-200' }}">Home</a>
                     </li>
                     <li>
-                        <a href="{{ url('/admin/Competition') }}"
-                            class="block py-2 pl-3 pr-4  rounded hover:bg-gray-100 dark:hover:bg-gray-700 md:hover:bg-transparent md:border-0 md:hover:text-red-600 md:p-0 md:dark:hover:text-white md:dark:hover:bg-transparent  {{ request()->is('/admin/Competition') ? 'text-red-600 dark:text-red-500' : ' text-gray-900 dark:text-gray-200' }}">Competition</a>
+                        <a href="{{ url('admin/Competition') }}"
+                            class="block py-2 pl-3 pr-4  rounded hover:bg-gray-100 dark:hover:bg-gray-700 md:hover:bg-transparent md:border-0 md:hover:text-red-600 md:p-0 md:dark:hover:text-white md:dark:hover:bg-transparent  {{ request()->is('admin/Competition') ? 'text-red-600 dark:text-red-500' : ' text-gray-900 dark:text-gray-200' }}">Competition</a>
                     </li>
                     <li>
-                        <a href="{{ url('/admin/Registration') }}"
-                            class="block py-2 pl-3 pr-4  rounded hover:bg-gray-100 dark:hover:bg-gray-700 md:hover:bg-transparent md:border-0 md:hover:text-red-600 md:p-0 md:dark:hover:text-white md:dark:hover:bg-transparent  {{ request()->is('/admin/Registration') ? 'text-red-600 dark:text-red-500' : ' text-gray-900 dark:text-gray-200' }}">Registration</a>
+                        <a href="{{ url('admin/Registration') }}"
+                            class="block py-2 pl-3 pr-4  rounded hover:bg-gray-100 dark:hover:bg-gray-700 md:hover:bg-transparent md:border-0 md:hover:text-red-600 md:p-0 md:dark:hover:text-white md:dark:hover:bg-transparent  {{ request()->is('admin/Registration') ? 'text-red-600 dark:text-red-500' : ' text-gray-900 dark:text-gray-200' }}">Registration</a>
                     </li>
                     <li>
-                        <a href="{{ url('/admin/Champion') }}"
-                            class="block py-2 pl-3 pr-4  rounded hover:bg-gray-100 dark:hover:bg-gray-700 md:hover:bg-transparent md:border-0 md:hover:text-red-600 md:p-0 md:dark:hover:text-white md:dark:hover:bg-transparent  {{ request()->is('/admin/Champion') ? 'text-red-600 dark:text-red-500' : ' text-gray-900 dark:text-gray-200' }}">Champion</a>
+                        <a href="{{ url('admin/Champion') }}"
+                            class="block py-2 pl-3 pr-4  rounded hover:bg-gray-100 dark:hover:bg-gray-700 md:hover:bg-transparent md:border-0 md:hover:text-red-600 md:p-0 md:dark:hover:text-white md:dark:hover:bg-transparent  {{ request()->is('admin/Champion') ? 'text-red-600 dark:text-red-500' : ' text-gray-900 dark:text-gray-200' }}">Champion</a>
                     </li>
                     <li>
-                        <a href="{{ url('Profile') }}"
-                            class="block py-2 pl-3 pr-4  rounded hover:bg-gray-100 dark:hover:bg-gray-700 md:hover:bg-transparent md:border-0 md:hover:text-red-600 md:p-0 md:dark:hover:text-white md:dark:hover:bg-transparent  {{ request()->is('Profile') ? 'text-red-600 dark:text-red-500' : ' text-gray-900 dark:text-gray-200' }}">Profile</a>
+                        <a href="{{ url('admin/post') }}"
+                            class="block py-2 pl-3 pr-4  rounded hover:bg-gray-100 dark:hover:bg-gray-700 md:hover:bg-transparent md:border-0 md:hover:text-red-600 md:p-0 md:dark:hover:text-white md:dark:hover:bg-transparent  {{ request()->is('admin/post') ? 'text-red-600 dark:text-red-500' : ' text-gray-900 dark:text-gray-200' }}">Post</a>
+                    </li>
+                    <li>
+                        <a href="{{ url('admin/change-password') }}"
+                            class="block py-2 pl-3 pr-4  rounded hover:bg-gray-100 dark:hover:bg-gray-700 md:hover:bg-transparent md:border-0 md:hover:text-red-600 md:p-0 md:dark:hover:text-white md:dark:hover:bg-transparent  {{ request()->is('admin/change-password') ? 'text-red-600 dark:text-red-500' : ' text-gray-900 dark:text-gray-200' }}">Change Password</a>
                     </li>
                     <li>
                         <a href="{{ asset('logout') }}"

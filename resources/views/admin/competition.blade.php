@@ -160,8 +160,6 @@
                 </div>
             </div>
 
-            <!-- table grup -->
-
 
         </div>
     </section>
